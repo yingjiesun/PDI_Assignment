@@ -1,0 +1,52 @@
+<HTML>
+<HEAD>
+<TITLE>PDI - Merge Json Arrays </TITLE>
+<script type="text/javascript" src="jsondata.js"></script>
+<script type="text/javascript" src="mergeFunction.js"></script>  
+<script type="text/javascript" src="display.js"></script> 
+</HEAD>
+<BODY>
+<div style="text-align:center; width:1200px;position: absolute;top:0;bottom: 100;left: 0;right:0;margin:auto;">
+<div style="margin-bottom:200px;">
+<h1>PDI Assignment - Merge Json Objects to Array</h1>
+<h3>Yingjie Sun</h3>
+<hr>
+<div style=" text-align:left">
+
+
+<b>mergeFunction.js - the merge functions & comments</b><br>
+jsondata.js - Json data <br> 
+display.js - display helper functions <br>
+Test.html<br>
+
+
+</div>
+
+<div style=" text-align:left; margin-top:10px; font-size:90%;" >
+
+
+<i>
+APPROACH SUMMARY: Convert the 2 dimensional array 'values' to map. Map key is the combination of first N-1 (N: array length) elements of each element array of 'values'. The last elements are the map values. By this way we don't need to search through the arrays, and the 'not ordered' is not an issue any more.
+The time complexity is O(N). The space complexity (created map in memory) is also O(N). For extremely large Json data, back end should provide pagination and front end should have 'Next' and 'Previous' buttons.
+</i>
+</div>
+<hr>
+<div style=" text-align:left; margin:10px;">
+<input type="radio" name = "data_source" value = "1" onclick="handclick(this)" checked > Use test data (3 Json Files) <br>
+<input type="radio" name = "data_source" value = "2" onclick="handclick(this)"> Use sample data
+</div>
+
+
+<div style=" text-align:left; margin-bottom:10px;">Results from function (raw json data):</div>
+<textarea id="display" style="width:1200px;height:350px;padding:7px;"></textarea>
+<br><br>
+<div style=" text-align:left; margin-bottom:10px;">Easy view:</div>
+<textarea id="display2" style="width:1200px;height:350px; margin-top:20px;padding:7px;"></textarea>
+</div>
+</div>
+
+</BODY>
+<script>
+display_merged_aray(get_merged_json_array(input_arr));
+</script>
+</HTML>
